@@ -44,6 +44,12 @@ const Home = () => {
         fetchPosts();
     }, [])
 
+    const handSearchChange = (e) => {
+        setSearchText(e.target.value);
+
+        
+    }
+
     return (
         <section className="max-w-7x1 mx-auto">
             <div>
