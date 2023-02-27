@@ -51,7 +51,7 @@ const CreatePost = () => {
             setLoading(true);
 
             try {
-                const response = await fetch('http://localhost:8080/api/v1/post', {
+                const response = await fetch('http://localhost:8080/api/v1/posts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -60,7 +60,14 @@ const CreatePost = () => {
                 })
 
                 await response.json();
+                navigate('/');
+            } catch (err) {
+                alert(err)
+            } finally {
+                setLoading(false);
             }
+        } else {
+            alert('Please enter a prompt and generate an image')
         }
 
     }

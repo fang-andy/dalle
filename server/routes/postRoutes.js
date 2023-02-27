@@ -39,9 +39,9 @@ router.route('/').post(async (req, res) => {
             photo: photoUrl.url,
         })
 
-        res.status(201).joins({ success: true, data: newPost });
+        res.status(201).json({ success: true, data: newPost });
     } catch (err) {
-        res.status(500).jsoin({ success: false, message: err });
+        res.status(500).json({ success: false, message: err });
     }
 });
 
